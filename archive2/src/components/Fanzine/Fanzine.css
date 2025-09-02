@@ -1,0 +1,32 @@
+.slideshow-container {
+    height: 100vh;
+    /* Set height to 100% of the viewport height */
+    overflow-y: scroll;
+    /* Allow vertical scrolling */
+
+    /* This is the magic! It enables scroll snapping on the vertical axis. */
+    /* 'mandatory' means the browser MUST snap to a point once scrolling stops. */
+    scroll-snap-type: y mandatory;
+}
+
+.slide-page {
+    width: 100%; /* Occupy full width of the container */
+    height: 100vh; /* Occupy full height of the viewport */
+    
+    /* This tells the container where this element should snap. */
+    /* 'start' aligns the top of this element with the top of the container. */
+    scroll-snap-align: start;
+  
+    /* Styling for the background image */
+    background-size: cover; /* Cover the entire div without stretching */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+  
+    /* Optional: for adding content on top of the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
