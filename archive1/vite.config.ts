@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: '/archive1',
+  // base: '/archive1',
   plugins: [react()],
+  server: {
+    allowedHosts: ["star-gratefully-hyena.ngrok-free.app"]
+  }
 })
