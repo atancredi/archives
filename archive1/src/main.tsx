@@ -1,12 +1,35 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Fanzine from './components/Fanzine/Fanzine';
+
 import './index.css'
-// import Fanzine from './components/Fanzine/Fanzine'
-import Links from './components/Links/Links'
+import './fonts.css'
+
+
+const flowsFinal = [
+  { id: 1, imageUrl: 'flows/DSCF7353_resized_1250_dithered_16.png', style: { backgroundPosition: "66% 0" } },
+  { id: 3, imageUrl: 'flows/DSCF7464_resized_1250_dithered_16.png', style: { backgroundPosition: "66% 0" } },
+  // { id: 2, imageUrl: 'flows/DSCF7388_dithered_16.png', style: {backgroundPosition: "20% 0"} },
+  { id: 4, imageUrl: 'flows/DSCF7519_1_resized_1250_dithered_16.png', },
+  { id: 7, imageUrl: 'flows/DSCF7451_resized_1250_dithered_8.png', style: { backgroundPosition: "50% 0" } },
+  // { id: 5, imageUrl: 'flows/DSCF7404_dithered_24.png', style: {backgroundPosition: "66% 0"} },
+  { id: 6, imageUrl: 'flows/DSCF7429_resized_1250_dithered_8.png', style: { backgroundPosition: "50% 0" } },
+  { id: 8, imageUrl: 'flows/DSCF7462_resized_1250_dithered_8.png', style: { backgroundPosition: "27% 0" } },
+  { id: 2, imageUrl: 'flows/DSCF7390_dithered_24.png', style: { backgroundPosition: "66% 0" } },
+  { id: 5, imageUrl: 'flows/DSCF7519_2_resized_1250_dithered_16.png', },
+  { id: 9, imageUrl: 'flows/DSCF7433_resized_1250_dithered_8.png', },
+
+
+]
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* <Fanzine /> */}
-    <Links></Links>
+    <BrowserRouter basename='archive'>
+      <Routes>
+        <Route path='/flows' element={<Fanzine defaultPages={flowsFinal} />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 )
