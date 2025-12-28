@@ -1,3 +1,0 @@
-fastapi
-uvicorn[standard] # Includes websockets and http-tools for performance
-python-dotenv
