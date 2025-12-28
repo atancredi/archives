@@ -2,12 +2,17 @@
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.page-container::-webkit-scrollbar {
+    display: none;
 }
 
 .no-y-scroll {
     overflow-y: hidden;
 }
-
 
 .page {
     width: 100%;
@@ -18,18 +23,43 @@
     background-repeat: no-repeat;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    scroll-snap-stop: always;
 }
 
+.align-natural>.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: unset;
+}
+
+.align-bottom>.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /* Scroll Snap Layout */
 .scroll-snap {
     scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
 }
 
 
 .scroll-snap>.page {
     scroll-snap-align: start;
 
+}
+
+
+/* UTILS - SPOSTARE */
+.row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

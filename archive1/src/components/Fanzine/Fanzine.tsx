@@ -1,38 +1,26 @@
-import { useEffect, useState } from 'react';
-import './Fanzine.css'
-import FanzinePage from './FanzinePage/FanzinePage';
+import { useState } from 'react';
+import Page, { IPage } from '../PageContainer/Page';
+import PageContainer from '../PageContainer/PageContainer';
 
-export interface IFanzineEntry {
-  id: number
-  imageUrl: string
+export interface FanzineProps{
+  defaultPages: IPage[]
 }
 
-function Fanzine() {
+// export interface IFanzineEntry {
+//   id: number
+//   imageUrl: string
+//   style: CSSProperties
+// }
 
-  const [pages, setPages] = useState<IFanzineEntry[]>([]);
+function Fanzine({defaultPages}: FanzineProps) {
 
-  useEffect(() => {
-    setPages([
-      { id: 1, imageUrl: 'fanz1/1.jpeg' },
-      { id: 2, imageUrl: 'fanz1/2.jpeg' },
-      { id: 3, imageUrl: 'fanz1/3.jpeg' },
-      { id: 4, imageUrl: 'fanz1/4.jpeg' },
-      { id: 5, imageUrl: 'fanz1/5.jpeg' },
-      { id: 6, imageUrl: 'fanz1/6.png' },
-      { id: 7, imageUrl: 'fanz1/7.jpeg' },
-    ])
-  }, [])
+  const [pages, _] = useState<IPage[]>(defaultPages);
 
   return (
-    <div className="slideshow-container">
-      {/* Map over the slides array to render a SlidePage for each item */}
-      {pages.map((page) => (
-        <FanzinePage
-          key={page.id} // The 'key' prop is crucial for React's rendering performance.
-          backgroundUrl={page.imageUrl}
-        />
-      ))}
-    </div>
+    <PageContainer className='scroll-snap'
+      pages={pages}
+    >
+    </PageContainer>
   );
 }
 
