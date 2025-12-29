@@ -10,4 +10,7 @@ body, html {
   margin: 0;
   padding: 0;
   overflow: hidden; /* Hide the body's scrollbar */
+
+  /* this sets the mobile navbar to black */
+  background: #000;
 }

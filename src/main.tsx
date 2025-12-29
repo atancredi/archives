@@ -28,7 +28,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter basename=''>
       <Routes>
-        <Route path='/flows' element={<Fanzine defaultPages={flowsFinal} />} />
+        <Route path='/' element={<Fanzine defaultPages={flowsFinal} />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
