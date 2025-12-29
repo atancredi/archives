@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { IPage } from '../PageContainer/Page';
-import PageContainer from '../PageContainer/PageContainer';
+import PageContainer, { IPage } from '../PageContainer/PageContainer';
 
 export interface FanzineProps {
 	defaultPages: IPage[]
