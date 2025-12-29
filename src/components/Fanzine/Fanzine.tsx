@@ -2,6 +2,8 @@ import { useState } from 'react';
 import PageLayout, { IPage } from '../PageContainer/PageLayout';
 import useVerticalScroller from '../../hooks/useVerticalScroller';
 
+import './menu.css';
+
 export interface FanzineProps {
 	defaultPages: IPage[]
 }
@@ -12,6 +14,8 @@ function Fanzine({ defaultPages }: FanzineProps) {
 
 	// const verticalScroller = useContext(PageLayoutContext)
 	const verticalScroller = useVerticalScroller(pages);
+
+	const [menuShowing, setMenuShowing] = useState(false);
 
 	return (
 		<PageLayout className='scroll-snap'
@@ -28,6 +32,18 @@ function Fanzine({ defaultPages }: FanzineProps) {
 				>
 				</PageLayout.Page>
 			))}
+			<div
+				onClick={() => { setMenuShowing(!menuShowing) }}
+				className='pages-menu-trigger'
+			>+</div>
+			{menuShowing && (
+				<div className='page pages-menu'>
+					<div className='pages-menu-row'>Menu 1</div>
+					<div className='pages-menu-row'>Menu 2</div>
+					<div className='pages-menu-row'>Menu 3</div>
+					<div className='pages-menu-row'>Menu 4</div>
+				</div>
+			)}
 		</PageLayout>
 	);
 }

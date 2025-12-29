@@ -28,6 +28,8 @@
     align-items: center;
 
     scroll-snap-stop: always;
+
+    position: relative;
 }
 
 .align-natural>.page {
