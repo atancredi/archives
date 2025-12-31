@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { CSSProperties, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -8,8 +8,12 @@ import './index.css'
 import './fonts.css'
 
 
-const flowsFinal = [
-  { id: 1, imageUrl: 'flows/DSCF7353_resized_1250_dithered_16.png', style: { backgroundPosition: "66% 0" } },
+const flowsFinal: {
+  id: number,
+  imageUrl: string,
+  style?: CSSProperties
+}[] = [
+  { id: 1, imageUrl: 'flows/DSCF7353_resized_1250_dithered_16.png', style: { backgroundPosition: "66% 0", filter: "contrast(1.2) brightness(1.2)"} },
   { id: 2, imageUrl: 'flows/DSCF7464_resized_1250_dithered_16.png', style: { backgroundPosition: "66% 0" } },
   // { id: 2, imageUrl: 'flows/DSCF7388_dithered_16.png', style: {backgroundPosition: "20% 0"} },
   { id: 3, imageUrl: 'flows/DSCF7519_1_resized_1250_dithered_16.png', },
@@ -29,6 +33,7 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter basename=''>
       <Routes>
         <Route path='/' element={<Fanzine defaultPages={flowsFinal} />} />
+        <Route path='/dev' element={<Fanzine defaultPages={flowsFinal} dev={true} />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

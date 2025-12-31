@@ -1,12 +1,13 @@
 /* Dots UI */
 .pagination {
     position: fixed;
-    right: 10px;
-    top: 85%;
-    transform: translateY(-50%);
+    right: 19px;
+    bottom: 17vw;
+    transform: translateY(2px);
     display: flex;
     flex-direction: column;
     gap: 10px;
+    /* mix-blend-mode: overlay; */
 }
 
 .dot {

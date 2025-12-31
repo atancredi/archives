@@ -1,12 +1,17 @@
-
+:root{
+    --menu-x-padding: 3px;
+}
 
 .pages-menu-trigger{
 
     position: fixed;
-    bottom: 1rem;
-    left: 1rem;
-    font-size: 36pt;
+    bottom: 2vh;
+    right: 10px;
+    font-size: 52px;
+    line-height: 32px;
     color: white;
+    /* mix-blend-mode: difference; */
+    mix-blend-mode: overlay;
     z-index: 9999;
 
 }
@@ -17,20 +22,88 @@
     position: fixed;
     top: 0;
     left: 0;
+    height: 100vh;
 
     z-index: 9998;
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(12px);
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: space-between;
 
+    color: white;
+    font-size: 22px;
+    filter: drop-shadow(2px 2px 6px black);
+}
+
+.pages-menu-rows{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 3rem;
+}
+
+.text-sm{
+    font-size: 18px;
 }
 
 .pages-menu-row {
-    width: 100%;
     text-align: right;
-    font-size: 36pt;
-    color: rgb(0, 0, 0);
+    font-size: 48px;
+    line-height: 52px;
     text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    padding: 0 var(--menu-x-padding);
+}
+
+.pages-menu-footer{
+    display: flex;
+    flex-direction: column;
+    /* filter: drop-shadow(2px 4px 6px black); */
+}
+
+.pages-menu-logo{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.pages-menu-logo > img {
+    width: 60%;
+    filter: grayscale(1);
+}
+
+.pages-menu-text{
+    mix-blend-mode: exclusion;
+    width: 100%;
+}
+
+.pages-menu-text > div{
+    width: 80%;
+    padding: 0 var(--menu-x-padding);
+}
+
+.pages-menu-text.right {
+    text-align: right;
+}
+
+
+.pages-menu-controls{
+    height: 2.5rem;
+    border-top: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.pages-menu-controls > div {
+    margin: auto 0;
+    padding: 0 var(--menu-x-padding);
+    text-decoration: underline;
 }

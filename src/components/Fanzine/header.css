@@ -1,0 +1,22 @@
+.header-container{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9997;
+    /* backdrop-filter: blur(18px); */
+    
+    width: 100vw;
+    min-height: 2rem;
+    font-size: 32px;
+    color: white;
+    mix-blend-mode: overlay;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-container > div {
+    margin: auto 5px;
+}
