@@ -29,7 +29,6 @@ export default function useVerticalScroller(
                     const index = pageRefs.current.indexOf(entry.target as HTMLElement);
                     if (index !== -1) {
                         setCurrentPage(index);
-                        console.log("current page", index);
                     }
                 }
             });

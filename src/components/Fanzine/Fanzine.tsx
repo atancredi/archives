@@ -44,6 +44,14 @@ function Fanzine({ defaultPages, dev = false }: FanzineProps) {
 					ref={(el) => { verticalScroller.pageRefs.current[index] = el }}
 					isVisible={Math.abs(verticalScroller.currentPage - index) <= 1}
 				>
+					{/* <div className='release-box'>
+						<div className='release-content'>
+
+						</div>
+						<div className='release-footer'>
+
+						</div>
+					</div> */}
 				</PageLayout.Page>
 			))}
 			{dev && !menuShowing && (
