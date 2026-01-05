@@ -6,6 +6,7 @@ import Fanzine from './components/Fanzine/Fanzine';
 
 import './index.css'
 import './fonts.css'
+import Radio from './Radio/Radio';
 
 
 const flowsFinal: {
@@ -34,6 +35,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path='/' element={<Fanzine defaultPages={flowsFinal} />} />
         <Route path='/dev' element={<Fanzine defaultPages={flowsFinal} dev={true} />} />
+        <Route path='/radio' element={<Radio/>} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

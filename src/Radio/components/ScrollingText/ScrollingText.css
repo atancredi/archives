@@ -1,0 +1,26 @@
+/* .scrolling-container {} */
+
+.scrolling-text {
+    display: inline-block;
+    min-width: 100%;
+    animation: scroll-text 5s linear infinite alternate;
+    padding-right: 30vw;
+}
+
+@keyframes scroll-text {
+
+    0%,
+    25% {
+        transform: translateX(0%);
+    }
+
+    75%,
+    100% {
+        transform: translateX(calc(-100% + 100vw));
+    }
+}
+
+/* stops animation on hover */
+/* .scrolling-container:hover .scrolling-text {
+    animation-play-state: paused;
+} */
